@@ -1,0 +1,31 @@
+<h1>Resultados de la búsqueda: {{termino}}</h1>
+<hr>
+
+<div class="row" *ngIf="resultados.length == 0">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            No existen resultados con el término {{termino}}
+        </div>
+    </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
+    <div class="col" *ngFor="let resul of resultados; let i = index">
+      <div class="card h-100" >
+        <img [src]="resul.img" class="card-img-top" alt="resul.nombre">
+        <div class="card-body">
+          <h5 class="card-title">{{ resul.nombre}}</h5>
+          <p class="card-text">{{ resul.bio}}</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">{{ resul.aparicion}}</small>
+        </div>
+        <div class="d-grid gap-2">
+            <!-- <button (click)="verHeroe(i)" class="btn btn-primary" type="button">Ver más</button> -->
+        </div>
+        <!-- <a [routerLink]="['/heroe', i]" class="btn btn-outline-primary"> Ver más</a> -->
+      </div>
+    </div>
+   
+  </div>
